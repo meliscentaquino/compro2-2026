@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class Array1 {
     public static void main(String[] args){
     
-        int num[] = {6,2,3,1,5,9,7,8,4,10};
+        int[] num = {6,2,3,1,5,9,7,8,4,10};
         for(int i = 0; i < num.length; i++){
-            System.out.print(num[i] + "");          
+            System.out.print(num[i] + " ");          
         }
 
         Scanner input = new Scanner(System.in);
@@ -14,12 +14,12 @@ public class Array1 {
         int index = -1;
 
         for(int i = 0; i < num.length; i++){
-             if (num[i] == enteredNum);
+             if (num[i] == enteredNum){
              index = i;
              break;
+            }
         }
 
-
-        System.out.println("Index: " + index);
+        System.out.println("Number at index " + index + ": " + num[index]);
     }
 }
