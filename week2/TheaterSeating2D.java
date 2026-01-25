@@ -1,5 +1,8 @@
+import java.util.*;
+
 public class TheaterSeating2D {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
         // 1. Declare and initialize the 2D array for the theater
         int[][] theater = new int[5][8]; // 5 rows, 8 columns
 
@@ -14,26 +17,37 @@ public class TheaterSeating2D {
                 Theater Seating 
                 (0 = Avlable, 1 = Booked)
                 """);
+        printChart(theater);
 
-        // 4. Use nested loops to print the seating chart
+        //ask if user want to book a seat?
+        System.out.print("\nBook a seat? (Y/N): ");
+        char userChoice = input.next().charAt(0);
 
-        for (int i = 0; i < theater.length; i++) {
-            for (int j = 0; j < theater[i].length; j++) {
-                System.out.print(theater[i][j] + " ");
-            }
-            System.out.println();
+        if (userChoice == 'Y' || userChoice == 'y') {
+            int row, column;
+            do {
+                row = (int)(Math.random() * theater.length);
+                column = (int)(Math.random() * theater[0].length);
+            } while (theater [row][column] == 1);
+
+            theater[row][column] = 1;
+
+            System.out.println("\nSuccessfully booked!!");
+            System.out.println("\n1Booked seat: \nROW " + (row + 1) + "\nCOLUMN " + (column + 1) + "\n");
+        } else {
+            System.out.println("\nNo booked seat");
         }
 
-        // 5. Count and print the total number of booked seats
-
-        int bookedCount = 0;
-        for (int i = 0; i < theater.length; i++) {
-            for (int j = 0; j < theater[i].length; j++) {
-                if (theater[i][j] == 1) {
-                    bookedCount++;
-                }
-            }
-        }
-        System.out.println("Total booked seats: " + bookedCount);
+        printChart(theater);
     }
+
+        // 4. print the seating chart
+        public static void printChart(int[][] theater){
+            for (int i = 0; i < theater.length; i++) {
+                for (int j = 0; j < theater[i].length; j++) {
+                System.out.print(theater[i][j] + " ");
+                }
+                System.out.println();
+            }
+        }
 }
