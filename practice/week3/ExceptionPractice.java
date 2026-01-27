@@ -11,7 +11,7 @@ public class ExceptionPractice {
             System.out.println("HAHAHAHAHA");
         }
         
-        System.out.print("Enter another number: ");
+        System.out.print("Enter another: ");
         int num = inputNumber();
 
         System.out.println("End. BYE BYE!!");      
@@ -23,7 +23,7 @@ public class ExceptionPractice {
         try{
             number = input.nextInt();
         }catch(Exception e){
-            System.out.println("HAHAHAHAHA MALI PARIN");
+            System.out.println("HAHAHAHAHA MAY MALI PARIN");
         }
         return number;
     }
