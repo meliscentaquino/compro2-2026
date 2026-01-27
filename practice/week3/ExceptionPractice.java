@@ -11,10 +11,20 @@ public class ExceptionPractice {
             System.out.println("HAHAHAHAHA");
         }
         
+        System.out.print("Enter another number: ");
+        int num = inputNumber();
 
-        System.out.println("End!");
+        System.out.println("End. BYE BYE!!");      
+    }
 
-        public static int InputNumber()
-
+    public static int inputNumber(){
+        int number = 0;
+        Scanner input = new Scanner(System.in);
+        try{
+            number = input.nextInt();
+        }catch(Exception e){
+            System.out.println("HAHAHAHAHA MALI PARIN");
+        }
+        return number;
     }
 }
