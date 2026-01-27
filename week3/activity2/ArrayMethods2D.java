@@ -3,25 +3,27 @@ import java.util.*;
 public class ArrayMethods2D {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        double[][] numbers = new double [3][4];
+        int rows = 3;
+        int column = 4;
+        double[][] numbers = new double [rows][column];
 
         System.out.println("Enter a 3-by-4 matrix row by row:");
-        for (int i = 0; i < 3; i++) {
-                for (int j = 0; i < 4; i++) {
-                    numbers[i][j] = input.nextDouble();
+        for (int r = 0; r < rows; r++) {
+                for (int c = 0; c < column; c++) {
+                    numbers[r][c] = input.nextDouble();
                 }
             }
-        sumColumn(numbers, 0);
-        sumColumn(numbers, 1);
-        sumColumn(numbers, 2);
-
+        
+        for (int c = 0; c < column; c++) {
+            System.out.println("Sum of the element at column " + c + " is " + sumColumn(numbers, c));
+        }
     }
 
-        public static void sumColumn (double[][] numbers, int columnIndex){
+        public static double sumColumn (double[][] numbers, int column){
             int sum = 0;
-            for (int i = 0; i < 3; i++) {
-                sum += numbers[i][columnIndex];
+            for (int row = 0; row < numbers.length; row++) {
+                sum += numbers[row][column];
             }
-            System.out.println("Sum of the element at column " + (columnIndex+1) + "is " + sum);
+            return sum;
         }
 }
